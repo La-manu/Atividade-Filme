@@ -1,0 +1,450 @@
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Changa+One:ital@0;1&family=Jersey+10&family=Jersey+15&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&family=Send+Flowers&family=Signika:wght@300..700&display=swap");
+body {
+  background-image: url("https://img.freepik.com/vetores-gratis/traz-papel-de-parede-do-espaco-noturno-com-um-campo-estelar-brilhante_1017-53512.jpg");
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: rgba(142, 137, 195, 0.961);
+  box-sizing: border-box;
+  justify-content: space-between; /* This is the key line to add */
+}
+nav {
+  flex: 1; /* nav ocupa todo o espaço restante */
+}
+nav ul {
+  /* This is what spreads out the links */
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* ul ocupa todo o nav */
+}
+nav ul li {
+  display: inline-block; /* garante que o li fique em linha */
+  justify-content: space-around;
+}
+nav ul li a {
+  font-size: 25px;
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+  transition: all 0.2s;
+}
+nav ul li a:hover {
+  transform: scale(1.2);
+  text-decoration: none;
+  color: rgb(32, 33, 42);
+}
+.logo img {
+  width: 70px;
+  height: auto;
+}
+.carousel input[type="radio"] {
+  display: none;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slide {
+  min-width: 100%;
+  height: 500px;
+  width: auto;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#slide1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+  transform: translateX(-100%);
+}
+#slide3:checked ~ .slides {
+  transform: translateX(-200%);
+}
+.navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  gap: 10px;
+}
+.nav-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+#slide1:checked ~ .navigation label:nth-child(1),
+#slide2:checked ~ .navigation label:nth-child(2),
+#slide3:checked ~ .navigation label:nth-child(3) {
+  background: rgba(255, 255, 255);
+}
+.arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  padding: 0 20px;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 10;
+}
+.arrow {
+  position: absolute;
+  font-size: 30px; /* diminui o tamanho da seta */
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 15px 15px; /* ajusta o espaço dentro da seta */
+  border-radius: 50%; /* deixa totalmente arredondada */
+  transition: background-color 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+}
+.arrow:hover {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Fundo mais escuro ao passar o mouse */
+}
+.arrow.prev {
+  left: 0;
+}
+.arrow.next {
+  right: 0;
+}
+#slide1:checked ~ .arrows .next-1,
+#slide1:checked ~ .arrows .prev-3 {
+  opacity: 1;
+  visibility: visible;
+}
+#slide2:checked ~ .arrows .next-2,
+#slide2:checked ~ .arrows .prev-1 {
+  opacity: 1;
+  visibility: visible;
+}
+#slide3:checked ~ .arrows .next-3,
+#slide3:checked ~ .arrows .prev-2 {
+  opacity: 1;
+  visibility: visible;
+}
+
+h1 {
+  text-align: center;
+  color: #fafafa;
+  font-family: Changa One, sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  padding: 10px 0px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.box {
+  display: flex;
+    flex-direction: column;
+  align-items: center; /* centraliza horizontalmente os itens */
+  justify-content: center; /* centraliza verticalmente se necessário */
+  background-color: rgba(119, 115, 160, 0.5);
+  width: 1300px; /* ou 90% pra ficar responsivo */
+  max-width: 100%; /* não deixa passar da tela */
+  margin: 50px auto; /* centraliza a caixa na tela */
+  padding: 20px;
+  box-sizing: border-box; /* garante que padding não quebre a largura */
+  border-radius: 10px; /* opcional, deixa estiloso */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* sombra opcional */
+}
+.box-sobre {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(119, 115, 160, 0.905);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  color: #fafafa;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+h2 {
+  font-family: "Changa One", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  text-shadow: #000000 1px 0 8px;
+}
+
+p {
+  margin: 0;
+  padding: 10px;
+  text-align: justify;
+}
+
+.box-diretores {
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* espaçamento entre os diretores */
+  margin-top: 10px;
+  flex-wrap: wrap; /* se a tela for pequena, eles vão para baixo */
+    flex: 1 1 250px; /* ocupa menos espaço */
+
+  align-items: center;
+    flex: 1 1 250px; /* tamanho da coluna dos diretores */
+
+}
+
+.diretor {
+  text-align: center;
+  color: #ffffff;
+}
+
+.diretor h3 {
+  font-family: "Jersey 15", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.diretor img {
+  width: 150px;       /* tamanho da foto */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%; /* deixa redonda */
+  border: 3px solid #fff; /* borda branca opcional */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+.diretor img:hover {
+  transform: scale(1.05); /* efeito sutil ao passar o mouse */
+}
+
+.sobre {
+  display: flex;
+  gap: 20px; /* aumentei o espaço entre sinopse e diretores */
+  align-items: flex-start;
+  flex-wrap: wrap; /* mantém responsivo */
+}
+
+.box-sobre {
+  flex: 2 1 500px; /* ocupa mais espaço */
+}
+
+.diretores {
+  flex: 1 1 250px; /* ocupa menos espaço */
+  margin-left: 10px;
+}
+.diretores h2 {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.info-filme {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* espaço entre os quadradinhos */
+  margin-bottom: 0px; /* espaço abaixo deles antes do carrossel */
+  flex-wrap: wrap; /* responsivo */
+}
+
+.info-box {
+  background-color: rgba(119, 115, 160, 0.9);
+  padding: 5px 5px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.info-box p {
+  margin: 0;
+  font-family: "Jersey 15", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.box-avaliacao {
+    width: 100%;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(119, 115, 160, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    color: #fafafa;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.box-avaliacao h2 {
+    font-family: 'Changa One', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.critica h3 {
+    font-family: 'Changa One', sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.critica p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.estrelas {
+    font-size: 24px;
+    color: gold;
+}
+
+.comentarios h3 {
+    font-family: 'Changa One', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    margin: 20px 0 10px 0;
+}
+
+.comentarios form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comentarios input,
+.comentarios textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.comentarios textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.comentarios button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #8e89c3;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.comentarios button:hover {
+    background-color: #6f67a5;
+}
+
+footer {
+  background-color: rgba(142, 137, 195, 0.5);
+  display: flex;
+  flex-direction: column; /* um embaixo do outro */
+  align-items: center;    /* centraliza no eixo horizontal */
+  justify-content: center; /* centraliza no eixo vertical */
+  padding: 20px 10px;
+  margin-top: 20px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+footer p {
+  margin: 0px 0;
+
+}
+
+.sobre-empresa {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgba(119, 115, 160, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  text-align: center;
+  color: #fff;
+}
+
+.sobre-empresa h2 {
+  font-family: "Changa One", sans-serif;
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.sobre-empresa-conteudo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.sobre-empresa img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.texto-empresa {
+  max-width: 600px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+}
