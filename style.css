@@ -741,3 +741,36 @@ footer p {
   background: radial-gradient(circle at 10% 27%, rgb(49, 16, 102), transparent 30%),
     radial-gradient(circle at 90% 80%, rgb(49, 16, 102), transparent 30%);
 }
+
+.box-trailer {
+  display: flex;              /* ativa flexbox */
+  flex-wrap: wrap;            /* deixa quebrar linha em telas pequenas */
+  justify-content: center;    /* centraliza */
+  align-items: flex-start;    /* alinha em cima */
+  gap: 40px;                  /* espaço entre os iframes */
+  margin-top: 20px;
+}
+
+
+.trailer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontalmente os itens */
+  justify-content: center; /* centraliza verticalmente se necessário */
+  background-color: rgba(64, 63, 88, 07);
+  width: 1300px; /* ou 90% pra ficar responsivo */
+  max-width: 100%; /* não deixa passar da tela */
+  margin: 50px auto; /* centraliza a caixa na tela */
+  padding: 20px;
+  box-sizing: border-box; /* garante que padding não quebre a largura */
+  border-radius: 40px; /* opcional, deixa estiloso */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* sombra opcional */
+
+}
+
+.box-trailer iframe {
+  width: 560px;               /* largura do player */
+  height: 315px;              /* altura do player */
+  border: none;
+  border-radius: 12px;
+}
